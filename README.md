@@ -1,5 +1,8 @@
 # portfolio
 Repo for portfolio
 
-Docs:
-Add plan from docs
+todo:
+Add plan from docs.
+
+completed:
+Create a checklist for tasks
