@@ -1,56 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do List</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Todo List</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
-
 <body>
+    <h1>Todo List</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button id="addTaskBtn">Add Task</button>
+    <ul id="taskList"></ul>
 
-    <h1>To-do checklist</h1>
-    <form>
-        <label for="task-input">Enter Task: </label>
-        <input type="text" id="task-input" name="task-input"/>
-        <button>Add Task</button>
-
-    </form>
-
-    <ul id="task-list"></ul>
-
-
-    <script>
-        const form = document.querySelector("form");
-        const taskList = document.querySelector("#task-list");
-
-        function addTask(task) {
-            const listItem = document.createElement("li")
-            listItem.innerHTML = `<input type="checkbox" /> <span>${task}</span><button>Delete</button>`
-            taskList.appendChild(listItem)}
-
-            form.addEventListener("submit", (event)=>{
-                event.preventDefault();
-                const input = document.querySelector("#task-input");
-                const task = input.value;
-                addTask(task)
-                input.value = ""
-            })
-
-            taskList.addEventListener("click", (event)=>{
-                if(event.target.tagName === "BUTTON"){
-                    const listItem = event.target.parentElement
-                    taskList.removeChild(listItem);
-                }
-            })
-
-            
-    </script>
-    
+    <script src="script.js"></script>
 </body>
-
-
 </html>
